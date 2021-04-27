@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //	○ 找出元素 66 在数组中的位置
+	var arr = [11,22,33,44,55,66,77,66];
+
+	arr.forEach(function(v,k){
+		if (v == 66) {
+			console.log(k);
+		}
+	})
+
+
+    //○ 计算数组中元素的和
+    var num = 0;
+    arr.forEach(function(k,v){
+    	num+=k
+    })  
+    console.log(num);
+    //移出数组中的二十二
+
+    
+    //移出数组中的22
+    arr.forEach(function(item,index,arr){
+    	if (item==22) {
+    		arr.splice(index,1)
+    	}
+    })
+    console.log(arr);
+
+    //查询66出现的次数
+    var a=0;
+    arr.forEach(function(k,v){
+    	if (k==66) {
+    		a++
+    	}
+    })
+    console.log(a);
+
+
+    //封装函数
+    function  $(selector,context){
+    	context=context||document;
+    	if (selector.charAt(0)==="#") 
+    		return context.getElementById(selector.slice(1));
+    	if (selector.charAt(0)===".")
+    		return context.getElementByClassName(selector.slice(1));
+    	else
+    		return context.getElementsByTagName(selector);
+    }
+</script>
+</body>
+</html>
